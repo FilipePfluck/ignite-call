@@ -10,6 +10,7 @@ import {
 import { GetServerSideProps } from 'next'
 import { unstable_getServerSession } from 'next-auth'
 import { useSession } from 'next-auth/react'
+import { NextSeo } from 'next-seo'
 import { useRouter } from 'next/router'
 import { ArrowRight } from 'phosphor-react'
 import { useForm } from 'react-hook-form'
@@ -48,36 +49,39 @@ const UpdateProfile = () => {
   }
 
   return (
-    <Container>
-      <Header>
-        <Heading as="strong">Quase lá!</Heading>
-        <Text>Por último, uma breve descrição e uma foto de perfil.</Text>
+    <>
+      <NextSeo title="Sobre você | Ignite Call" noindex />
+      <Container>
+        <Header>
+          <Heading as="strong">Quase lá!</Heading>
+          <Text>Por último, uma breve descrição e uma foto de perfil.</Text>
 
-        <MultiStep size={4} currentStep={4} />
-      </Header>
-      <S.ProfileBox as="form" onSubmit={handleSubmit(handleUpdateProfile)}>
-        <label>
-          <Text>Foto de perfil</Text>
-          <Avatar
-            src={session.data?.user.avatar_url}
-            alt={session.data?.user.name}
-          />
-        </label>
+          <MultiStep size={4} currentStep={4} />
+        </Header>
+        <S.ProfileBox as="form" onSubmit={handleSubmit(handleUpdateProfile)}>
+          <label>
+            <Text>Foto de perfil</Text>
+            <Avatar
+              src={session.data?.user.avatar_url}
+              alt={session.data?.user.name}
+            />
+          </label>
 
-        <label>
-          <Text size="sm">Sobre você</Text>
-          <TextArea {...register('bio')} />
-          <S.FormAnnotation size="sm">
-            Fale um pouco sobre você. Isso será exibido em uma página pessoal.
-          </S.FormAnnotation>
-        </label>
+          <label>
+            <Text size="sm">Sobre você</Text>
+            <TextArea {...register('bio')} />
+            <S.FormAnnotation size="sm">
+              Fale um pouco sobre você. Isso será exibido em uma página pessoal.
+            </S.FormAnnotation>
+          </label>
 
-        <Button disabled={isSubmitting}>
-          Finalizar
-          <ArrowRight />
-        </Button>
-      </S.ProfileBox>
-    </Container>
+          <Button disabled={isSubmitting}>
+            Finalizar
+            <ArrowRight />
+          </Button>
+        </S.ProfileBox>
+      </Container>
+    </>
   )
 }
 
