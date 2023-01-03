@@ -1,6 +1,9 @@
 # Ignite Call
 Conecte seu calendário e permita que as pessoas marquem agendamentos no seu tempo livre.
 
+![](https://github.com/FilipePfluck/ignite-call/blob/main/images/landing.png)
+![](https://github.com/FilipePfluck/ignite-call/blob/main/images/calendar.png)
+
 O Ignite Call é uma aplicação que foi desenvolvida no 6º módulo da nova trilha de React do Ignite. 
 Foi desenvolvido utilizando o Ignite Ui, o Design System desenvolvido no 5º módulo. 
 Nesse projeto, eu me aprofundei ainda mais no Next, Prisma, Stitches, React Hook Form e React Query. 
